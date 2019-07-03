@@ -2,7 +2,7 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>4.pdf</title>
+   <title>python_01_link</title>
    <style>
     body {
    padding: 10% 30% 10% 20% ;
@@ -13,12 +13,12 @@
   <h1>HOW-TO: Программа на Python, Часть 1</h1>
   
   <ul>
-   <li><a href="#part1">Программа на Python - часть 1</a></li>
-   <li><a href="index5.html" target="_blank">Программа на Python - часть 2</a></li>
-   <li><a href="index6.html" target="_blank">Программа на Python - часть 3</a></li>
+   <li><a href="#part1"><em>Программа на Python - часть 1</em></a></li>
+   <li><a href="index5.html" target="_blank"><em>Программа на Python - часть 2</em></a></li>
+   <li><a href="index6.html" target="_blank"><em>Программа на Python - часть 3</em></a></li>
   </ul>
   
-  <h2>Содержание</h2>
+  <h2 id="content">Содержание</h2>
   <h3 id="part1">HOW-TO: Программа на Python, Часть 1</h3>
   
   <ul>
@@ -34,6 +34,7 @@
  интерфейсов <a href="https:ru.wikipedia.org/wiki/Графический_интерфейс_пользователя" target="_blank" title="graphical user interface">(GUI)</a>.
  Давайте создадим простую программу прямо сейчас.</p>
   <h2 id="chapter1">Наша первая программа</h2>
+  <p><a href="#content">К содержанию</a></p>
   <p align="left">Наберём код в текстовом редакторе (например, в <strong>gedit</strong>). Потом мы разберёмся, что делает<br>
  каждая строка и пойдём дальше.</p>
   <p align="left">Введите эти 4 строки:</p>
@@ -46,7 +47,7 @@
  <strong>python_examples</strong> в домашнем каталоге. Этот пример показывает, как просто написать<br>
  программу на Python. Для запуска программы нужно сделать её файл исполняемым. Для<br>
  этого введите в терминале</p>
-  <p><tt><ins><em>chmod +x hello.py</em></ins></tt></p>
+  <p><strong>chmod +x hello.py</strong></p>
  <p>в папке, в которой вы сохранили программу. Теперь запустите её.</p>
   <p><pre>
 greg@earth:~/python_examples$ ./hello.py
@@ -56,6 +57,7 @@ Hello there, Ferd Burphel!
 greg@earth:~/python_examples$</pre></p>
  <p>Вот и всё.</p>
  <h2 id="chapter2">Пример цикла For</h2>
+ <p><a href="#content">К содержанию</a></p>
  <p align="left">Теперь давайте рассмотрим пример программирования цикла. Запустите текстовый<br>
  редактор и наберите следующую программу:</p>
  <p><pre>#!/usr/bin/env python
