@@ -24,31 +24,32 @@
 <!--Задание: создать форму Регистрационной анкеты-->
 <body>
     <h1>Заполните анкету</h1>
-    <form action="http://fe.it-academy.by/TestForm.php">
+    <form id="FillProfile" action="http://fe.it-academy.by/TestForm.php">
 
         <!--Область "Личные данные"-->
-        <fieldset>
+        <fieldset id="fsPersonalData">
+            <!--Область ФИО, без группы-->
             <legend>Личные данные</legend>
-
-            <input type="text" id="SecondName" placeholder="Фамилия" maxlength="25" pattern="[А-Я][а-я]{1,25}" required
-                   autofocus>
             <label for="SecondName">
+                <input autofocus id="SecondName" maxlength="25" pattern="[А-Я][а-я]{1,25}" placeholder="Фамилия"
+                       required type="text">
                 (Только кириллица, без пробелов, длина поля 25, обязательное поле, автофокус на данном поле)
             </label>
             <br>
-            <input type="text" id="FirstName" placeholder="Имя" maxlength="20" pattern="[А-Я][а-я]{1,20}" required>
             <label for="FirstName">
+                <input id="FirstName" maxlength="20" pattern="[А-Я][а-я]{1,20}" placeholder="Имя"
+                       required type="text">
                 (Только кириллица, без пробелов, длина поля 20, обязательное поле)
             </label>
             <br>
-            <input type="text" id="MiddleName" placeholder="Отчество" maxlength="24" pattern="[А-Я][а-я]{1,24}"
-                   required>
             <label for="MiddleName">
+                <input id="MiddleName" maxlength="24" pattern="[А-Я][а-я]{1,24}" placeholder="Отчество"
+                       required type="text">
                 (Только кириллица, без пробелов, длина поля 24, обязательное поле)
             </label>
-
-            <!--Пасспортные данные-->
-            <fieldset id="passData">
+            <!--Конец. Область ФИО, без группы-->
+            <!--Область Пасспортные данные-->
+            <fieldset id="fsPassData">
                 <legend>Паспортные данные</legend>
                 <label for="PassportSE">
                     (Серия - только заглавные две латинские буквы с длиной 2 и максимальным количеством символов 2,
@@ -60,21 +61,21 @@
                     менее 7, обязательное поле)
                 </label>
                 <br>
-                <input type="text" id="PassportSE" placeholder="SE" maxlength="2" pattern="[A-Z]{2}">
+                <input id="PassportSE" maxlength="2" pattern="[A-Z]{2}" placeholder="SE" type="text">
 
-                <input type="text" id="PassportNum" placeholder="№" maxlength="7" pattern="[0-9]{7}">
+                <input id="PassportNum" maxlength="7" pattern="[0-9]{7}" placeholder="№" type="text">
 
-            </fieldset>
+            </fieldset> <!--Конец. Пасспортные данные (fsPassData)-->
 
-            <!--Дата рождения-->
-            <fieldset>
+            <!--Дата рождения (fsBirthData)-->
+            <fieldset id="fsBirthData">
                 <legend>Дата рождения</legend>
-                <input type="text" id="BirthY" placeholder="2000" maxlength="4" pattern="[0-9]{4}">
+                <input id="BirthY" maxlength="4" pattern="[0-9]{4}" placeholder="2000" type="text">
                 <label for="BirthY">
                     (Год рождения, 4-е цифры)
                 </label>
                 <br>
-                <select name="BirthM" id="BirthM">
+                <select id="BirthM" name="BirthM">
                     <option value="1">Январь</option>
                     <option value="2">Февраль</option>
                     <option value="3">Март</option>
@@ -96,13 +97,16 @@
                 <label for="BirthD">
                     (День рождения, диапазон от 1 до 31, с шагом 1)
                 </label>
-            </fieldset>
+            </fieldset> <!--Конец. Дата рождения (fsBirthData)-->
+
+            <!--Гражданство и адрес. Без группы-->
             <label>
-                <select name="Cityzenship" id="Cityzenship">
+                <select name="Cityzenship" id="Cityzenship" required>
                     <option value="1">РБ</option>
                     <option value="2">РФ</option>
                     <option value="3">Другое</option>
                 </select>
+                (Гражданство - выбор одного значения из списка, обязательное поле)
             </label>
             <br>
             <label>
@@ -111,88 +115,104 @@
                 <textarea lang="ru">
 
                 </textarea>
-            </label>
-        </fieldset> <!--Конец личные данные-->
+            </label> <!--Конец. Гражданство и адрес. Без группы-->
 
-        <!--Интересы-->
-        <fieldset>
-            <legend>Интересы</legend>
+            <!--Интересы (fsInterests)-->
+            <fieldset id="fsInterests">
+                <legend>Интересы</legend>
 
-            <fieldset>
-                <legend>Хобби</legend>
-                <label>
-                    <input type="checkbox" name="hobby[]"> Рыбалка
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" name="hobby[]"> Астрономия
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" name="hobby[]"> Дайвинг
-                </label>
-                <br>
-                <label>
-                    <input type="checkbox" name="hobby[]"> Марки
-                </label>
-            </fieldset> <!--Конец хобби-->
+                <!--Хобби-->
+                <fieldset id="fsHobby">
+                    <legend>Хобби</legend>
+                    <label>
+                        <input name="hobby[]" type="checkbox" value="Рыбалка"> Рыбалка
+                    </label>
+                    <br>
+                    <label>
+                        <input name="hobby[]" type="checkbox" value="Астрономия"> Астрономия
+                    </label>
+                    <br>
+                    <label>
+                        <input name="hobby[]" type="checkbox" value="Дайвинг"> Дайвинг
+                    </label>
+                    <br>
+                    <label>
+                        <input name="hobby[]" type="checkbox" value="Марки"> Марки
+                    </label>
+                </fieldset> <!--Конец хобби-->
 
-            <fieldset>
-                <legend>Домашние животные (возможность выбора нескольких вариантов)</legend>
-                <label>
-                    <select multiple name="pets[]" size="9">
-                        <optgroup label="Попугаи">
-                            <option value="1">Волнистый</option>
-                            <option value="2">Ара</option>
-                            <option value="3">Неразлучник</option>
-                        </optgroup>
-                        <optgroup label="Рыба">
-                            <option value="4">Караси</option>
-                            <option value="5">Окуни</option>
-                            <option value="6">Осетр</option>
-                        </optgroup>
-                        <optgroup label="Птицы">
-                            <option value="7">Стая ворон</option>
-                            <option value="8">Аист</option>
-                            <option value="9">Археоптерикс</option>
-                        </optgroup>
-                    </select>
-                </label>
-            </fieldset> <!--Конец домашние животные-->
+                <!--Домашние животные (fsPets)-->
+                <fieldset id="fsPets">
+                    <legend>Домашние животные (возможность выбора нескольких вариантов)</legend>
+                    <label id="LSelPets">
+                        <select id="selPets" multiple name="pets[]" size="9">
+                            <optgroup label="Попугаи">
+                                <option value="1">Волнистый</option>
+                                <option value="2">Ара</option>
+                                <option value="3">Неразлучник</option>
+                            </optgroup>
+                            <optgroup label="Рыба">
+                                <option value="4">Караси</option>
+                                <option value="5">Окуни</option>
+                                <option value="6">Осетр</option>
+                            </optgroup>
+                            <optgroup label="Птицы">
+                                <option value="7">Стая ворон</option>
+                                <option value="8">Аист</option>
+                                <option value="9">Археоптерикс</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                </fieldset> <!--Конец домашние животные (fsPets)-->
 
-        </fieldset> <!--Конец интересы-->
+            </fieldset> <!--Конец. Интересы (fsInterests)-->
 
-        <!--Данные для входа и восстановления пароля-->
-        <fieldset>
+        </fieldset> <!--Конец Область "Личные данные" (fsPersonalData)-->
+
+        <!--Данные для входа и восстановления пароля (fsPsWdRecoveryData)-->
+        <fieldset id="fsPsWdRecoveryData">
             <legend>Данные для входа и восстановления пароля</legend>
-            <input type="text" id="Login" placeholder="Логин" maxlength="20" pattern="[A-Zа-z]{5,20}" required>
+            <input id="Login" maxlength="20" pattern="[A-Zа-z]{5,20}" placeholder="Логин" required type="text">
             <label for="Login">
                 (Только латиница, без пробелов, не менее 5 символов, длина поля 20, обязательное поле)
             </label>
             <br>
-            <input type="password" id="Pass" maxlength="20" pattern="[A-Zа-z]{10,20}" required autocomplete="off">
+            <input autocomplete="off" id="Pass" maxlength="20" pattern="[A-Zа-z]{10,20}" required type="password">
             <label for="Pass">
                 (Только латиница, без пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение)
             </label>
-        </fieldset> <!--Конец Данные для входа и восстановления пароля-->
+        </fieldset> <!--Конец Данные для входа и восстановления пароля (fsPsWdRecoveryData)-->
 
-        <!--Область "Координаты"-->
-        <fieldset>
-            <!--<legend>Координаты</legend>
-            <input type="email" id="firstemail" placeholder="Введите адрес почты" pattern="[A-Zа-z]+(@)" required>
-            <label for="firstemail">
-                Проверка должна осуществляться при помощи новых атрибутов тега <input>
+        <!--Область "Координаты" (fsContact)-->
+        <fieldset id="fsContact">
+            <legend>Координаты</legend>
+
+            <label for="FirstEmail">
+                <input id="FirstEmail" pattern="[A-Zа-z]+(@)" placeholder="Введите адрес почты"
+                       required type="email">
+                (Проверка должна осуществляться при помощи новых атрибутов тега &#60input&#62)
             </label>
             <br>
-            <input type="password" id="Pass" maxlength="20" pattern="[A-Zа-z]{10,20}" required autocomplete="off">
-            <label for="Pass">
+            <label for="PsWdFirstEmail">
+                <input autocomplete="off" id="PsWdFirstEmail" maxlength="20" pattern="[A-Zа-z]{10,20}"
+                       required type="password">
                 (Только латиница, без пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение)
-            </label>-->
-        </fieldset> <!--Конец "Координаты"-->
-        <!--Область "Индикатор" (цифры)-->
-        <fieldset>
-            <legend></legend>
-        </fieldset>
+            </label>
+        </fieldset> <!--Конец "Координаты" (fsContact)-->
+
+        <!--Область "Индикатор" (fsIndicator)-->
+        <fieldset id="fsIndicator">
+            <legend>Цифры</legend>
+            <label for="FloatNumber">
+                <input id="FloatNumber" max="2.5" min="-2.5" step="0.1" type="number">
+                Диапазон от -2.5 до 2.5 с шагом 0.1
+            </label>
+            <br>
+            <label for="Indicator">
+                <input id="Indicator" max="10" min="1" step="1" type="range">
+                Максимальное 10 минимальное 1
+            </label>
+        </fieldset> <!--Конец. Область "Индикатор" (fsIndicator)-->
 
         <!--Область "Кнопки управления"-->
         <fieldset>
