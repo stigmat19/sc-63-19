@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form_reg</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        input#PassportSE {
+            width: 4ch;
+        }
+        input#PassportNum{
+            width: 7ch;
+        }
+        input#BirthY{
+            width: 4ch;
+        }
+        input#BirthD{
+            width: 5ch;
+        }
+    </style>
+</head>
+<!--Задание: создать форму Регистрационной анкеты-->
+<body>
+    <h1>Заполните анкету</h1>
+    <form action="http://fe.it-academy.by/TestForm.php">
+
+        <!--Область "Личные данные"-->
+        <fieldset>
+            <legend>Личные данные</legend>
+
+            <input type="text" id="SecondName" placeholder="Фамилия" maxlength="25" pattern="[А-Я][а-я]{1,25}" required
+                   autofocus>
+            <label for="SecondName">
+                (Только кириллица, без пробелов, длина поля 25, обязательное поле, автофокус на данном поле)
+            </label>
+            <br>
+            <input type="text" id="FirstName" placeholder="Имя" maxlength="20" pattern="[А-Я][а-я]{1,20}" required>
+            <label for="FirstName">
+                (Только кириллица, без пробелов, длина поля 20, обязательное поле)
+            </label>
+            <br>
+            <input type="text" id="MiddleName" placeholder="Отчество" maxlength="24" pattern="[А-Я][а-я]{1,24}"
+                   required>
+            <label for="MiddleName">
+                (Только кириллица, без пробелов, длина поля 24, обязательное поле)
+            </label>
+
+            <!--Пасспортные данные-->
+            <fieldset id="passData">
+                <legend>Паспортные данные</legend>
+                <label for="PassportSE">
+                    (Серия - только заглавные две латинские буквы с длиной 2 и максимальным количеством символов 2,
+                    количество букв не менее 2, обязательное поле)
+                </label>
+                <br>
+                <label for="PassportNum">
+                    (Номер паспорта - только цифры с длиной 7 и максимальным количеством символов 7, количество цифр не
+                    менее 7, обязательное поле)
+                </label>
+                <br>
+                <input type="text" id="PassportSE" placeholder="SE" maxlength="2" pattern="[A-Z]{2}">
+
+                <input type="text" id="PassportNum" placeholder="№" maxlength="7" pattern="[0-9]{7}">
+
+            </fieldset>
+
+            <!--Дата рождения-->
+            <fieldset>
+                <legend>Дата рождения</legend>
+                <input type="text" id="BirthY" placeholder="2000" maxlength="4" pattern="[0-9]{4}">
+                <label for="BirthY">
+                    (Год рождения, 4-е цифры)
+                </label>
+                <br>
+                <select name="BirthM" id="BirthM">
+                    <option value="1">Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12">Декабрь</option>
+                </select>
+                <label for="BirthM">
+                    (Месяц рождения, выбрать из списка)
+                </label>
+                <br>
+                <input id="BirthD" max="31" min="1" step="1" type="number" value="1">
+                <label for="BirthD">
+                    (День рождения, диапазон от 1 до 31, с шагом 1)
+                </label>
+            </fieldset>
+            <label>
+                <select name="Cityzenship" id="Cityzenship">
+                    <option value="1">РБ</option>
+                    <option value="2">РФ</option>
+                    <option value="3">Другое</option>
+                </select>
+            </label>
+            <br>
+            <label>
+                Адрес:
+                <br>
+                <textarea lang="ru">
+
+                </textarea>
+            </label>
+        </fieldset> <!--Конец личные данные-->
+
+        <!--Интересы-->
+        <fieldset>
+            <legend>Интересы</legend>
+
+            <fieldset>
+                <legend>Хобби</legend>
+                <label>
+                    <input type="checkbox" name="hobby[]"> Рыбалка
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="hobby[]"> Астрономия
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="hobby[]"> Дайвинг
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="hobby[]"> Марки
+                </label>
+            </fieldset> <!--Конец хобби-->
+
+            <fieldset>
+                <legend>Домашние животные (возможность выбора нескольких вариантов)</legend>
+                <label>
+                    <select multiple name="pets[]" size="9">
+                        <optgroup label="Попугаи">
+                            <option value="1">Волнистый</option>
+                            <option value="2">Ара</option>
+                            <option value="3">Неразлучник</option>
+                        </optgroup>
+                        <optgroup label="Рыба">
+                            <option value="4">Караси</option>
+                            <option value="5">Окуни</option>
+                            <option value="6">Осетр</option>
+                        </optgroup>
+                        <optgroup label="Птицы">
+                            <option value="7">Стая ворон</option>
+                            <option value="8">Аист</option>
+                            <option value="9">Археоптерикс</option>
+                        </optgroup>
+                    </select>
+                </label>
+            </fieldset> <!--Конец домашние животные-->
+
+        </fieldset> <!--Конец интересы-->
+
+        <!--Данные для входа и восстановления пароля-->
+        <fieldset>
+            <legend>Данные для входа и восстановления пароля</legend>
+            <input type="text" id="Login" placeholder="Логин" maxlength="20" pattern="[A-Zа-z]{5,20}" required>
+            <label for="Login">
+                (Только латиница, без пробелов, не менее 5 символов, длина поля 20, обязательное поле)
+            </label>
+            <br>
+            <input type="password" id="Pass" maxlength="20" pattern="[A-Zа-z]{10,20}" required autocomplete="off">
+            <label for="Pass">
+                (Только латиница, без пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение)
+            </label>
+        </fieldset> <!--Конец Данные для входа и восстановления пароля-->
+
+        <!--Область "Координаты"-->
+        <fieldset>
+            <!--<legend>Координаты</legend>
+            <input type="email" id="firstemail" placeholder="Введите адрес почты" pattern="[A-Zа-z]+(@)" required>
+            <label for="firstemail">
+                Проверка должна осуществляться при помощи новых атрибутов тега <input>
+            </label>
+            <br>
+            <input type="password" id="Pass" maxlength="20" pattern="[A-Zа-z]{10,20}" required autocomplete="off">
+            <label for="Pass">
+                (Только латиница, без пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение)
+            </label>-->
+        </fieldset> <!--Конец "Координаты"-->
+        <!--Область "Индикатор" (цифры)-->
+        <fieldset>
+            <legend></legend>
+        </fieldset>
+
+        <!--Область "Кнопки управления"-->
+        <fieldset>
+            <legend>Кнопки управления</legend>
+            <input src="../email.jpg" type="image" alt="Отправить">
+        </fieldset>
+    </form>
+</body>
+</html>
