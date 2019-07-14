@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+input#PassportSE {
+    width: 4ch;
+}
+input#PassportNum{
+    width: 7ch;
+}
+input#BirthY{
+    width: 4ch;
+}
+input#BirthD{
+    width: 5ch;
+}

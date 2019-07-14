@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Form_reg</title>
+    <!--Эта команда сработала-->
+    <!--
+    <link href="Styles/styles1.css" media="all" rel="stylesheet" type="text/css">
+    -->
     <style>
+        /*Эта команда тоже сработала*/
+        @import "Styles/styles1.css" all;
+        <!--
+        /*Нижеследующее теперь в в файле стилей*/
+        /*
         h1 {
             text-align: center;
         }
@@ -19,7 +28,8 @@
         input#BirthD{
             width: 5ch;
         }
-    </style>
+        */
+    </style>-->
 </head>
 <!--Задание: создать форму Регистрационной анкеты-->
 <body>
@@ -101,7 +111,7 @@
 
             <!--Гражданство и адрес. Без группы-->
             <label>
-                <select name="Cityzenship" id="Cityzenship" required>
+                <select id="Cityzenship" name="Cityzenship" required size="3">
                     <option value="1">РБ</option>
                     <option value="2">РФ</option>
                     <option value="3">Другое</option>
@@ -172,13 +182,15 @@
         <!--Данные для входа и восстановления пароля (fsPsWdRecoveryData)-->
         <fieldset id="fsPsWdRecoveryData">
             <legend>Данные для входа и восстановления пароля</legend>
-            <input id="Login" maxlength="20" pattern="[A-Zа-z]{5,20}" placeholder="Логин" required type="text">
             <label for="Login">
+                <input id="Login" maxlength="20" pattern="[A-Zа-z]{5,20}" placeholder="Логин"
+                       required type="text">
                 (Только латиница, без пробелов, не менее 5 символов, длина поля 20, обязательное поле)
             </label>
             <br>
-            <input autocomplete="off" id="Pass" maxlength="20" pattern="[A-Zа-z]{10,20}" required type="password">
             <label for="Pass">
+                <input autocomplete="off" id="Pass" maxlength="20"
+                       required type="password">
                 (Только латиница, без пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение)
             </label>
         </fieldset> <!--Конец Данные для входа и восстановления пароля (fsPsWdRecoveryData)-->
@@ -188,9 +200,9 @@
             <legend>Координаты</legend>
 
             <label for="FirstEmail">
-                <input id="FirstEmail" pattern="[A-Zа-z]+(@)" placeholder="Введите адрес почты"
+                <input id="FirstEmail" placeholder="Введите адрес почты"
                        required type="email">
-                (Проверка должна осуществляться при помощи новых атрибутов тега &#60input&#62)
+                (Проверка должна осуществляться при помощи новых атрибутов тега &#60;input&#62;)
             </label>
             <br>
             <label for="PsWdFirstEmail">
@@ -217,7 +229,13 @@
         <!--Область "Кнопки управления"-->
         <fieldset>
             <legend>Кнопки управления</legend>
-            <input src="../email.jpg" type="image" alt="Отправить">
+            <input id="bnSend" type="submit" value="Отправить">
+            <input id="bnReset" type="reset" value="Сбросить">
+            <br>
+            <label>
+                <input id="bnEmail" src="media/email.jpg" type="image" alt="Отправить">
+                При нажатии на эту кнопку ничего не происходит
+            </label>
         </fieldset>
     </form>
 </body>
