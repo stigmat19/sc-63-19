@@ -1,0 +1,21 @@
+#tForms{
+    width: 700px;
+}
+#r1{
+    width: 700px;
+}
+#tr4td1ShelfLife{
+    width: 4ch;
+}
+td{
+    width: 350px;
+    vertical-align: top;
+}
+form div{
+    font-weight: bold;
+}
+fieldset p{
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 0;
+}

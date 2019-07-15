@@ -3,12 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        @import "Styles/styles1.css" all;
+    </style>
 </head>
 <!--Задание: создать таблицу с формами в ячейках таблицы-->
 <body>
-    <!---->
-    <fieldset>
-        <legend></legend>
-    </fieldset>
+    <div id="r1">
+        Рекомендации к выполнению работы:
+        <ul id="r3">
+            <li>Все формы размещены в таблице, шириной 700px, 4 строки х 2 столбца</li>
+            <li>Каждая форма должна иметь правильно заполненные атрибуты name, method и action</li>
+            <li>Для атрибута action, воспользуйтесь значением "http://fe.it-academy.by/TestForm.php" - небоьшой скрипт показывающий переменные переданные методами post и get</li>
+        </ul>
+    </div>
+    <!--Таблица 4х2 с формами-->
+    <table id="tForms">
+        <!--Строка 1-->
+        <tr id="tr1">
+            <!--Колонка 1. Форма поиска с вариантами. Длина запроса не более 10 символов-->
+            <td id="tr1td1">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi11" name="fn11">
+                    <input name="formid11" type="hidden" value="activated">
+                    <div>Простая форма поиска с вариантами:</div>
+                    <br>
+                    <fieldset id="fsfi11">
+                        <legend>Строка поиска</legend>
+                        <label for="tr1td1Search">
+                            <input id="tr1td1Search" name="tr1td1Search" maxlength="10" type="search">
+                        </label>
+                        <label for="tr1td1Submit">
+                            <input id="tr1td1Submit" type="submit" value="Искать">
+                        </label>
+                        <br>
+                        <!--Радиокнопка тип поиска-->
+                        <label for="tr1td1SearchType01">
+                            <input checked id="tr1td1SearchType01" name="tr1td1SearchType" type="radio" value="0101_01">
+                            на сайте
+                        </label>
+                        <label for="tr1td1SearchType02">
+                            <input id="tr1td1SearchType02" name="tr1td1SearchType" type="radio" value="0101_02">
+                            в google
+                        </label> <!--Конец. Радиокнопка тип поиска-->
+                        <br>
+                        <p>
+                            Длина запроса не более 10 символов
+                        </p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 1. Форма поиска с вариантами. Длина запроса не более 10 символов-->
+            <!--Строка 1-->
+            <!--Колонка 2. Форма поиска с вариантами. Автофокус в поле поиска-->
+            <td id="tr1td2">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi12" name="fn12">
+                    <input name="formid12" type="hidden" value="activated">
+                    <div>Простая форма поиска с вариантами:</div>
+                    <br>
+                    <fieldset id="fsfi12">
+                        <legend>Строка поиска</legend>
+                        <label for="tr1td2Search">
+                            <input autofocus id="tr1td2Search" name="tr1td2Search" maxlength="10" required type="search">
+                            *
+                        </label>
+                        <label for="tr1td2Submit">
+                            <input id="tr1td2Submit" type="submit" value="Искать">
+                        </label>
+                        <br>
+                        <!--Радиокнопка тип поиска-->
+                        <label for="tr1td2SearchType01">
+                            <input id="tr1td2SearchType01" name="tr1td1SearchType" type="radio" value="0102_01">
+                            на сайте
+                        </label>
+                        <label for="tr1td2SearchType02">
+                            <input checked id="tr1td2SearchType02" name="tr1td1SearchType" type="radio" value="0102_02">
+                            в google
+                        </label> <!--Конец. Радиокнопка тип поиска-->
+                        <br>
+                        <p>
+                            * - обязательное поле <br>
+                            Автофокус в поле поиска
+                        </p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 2. Форма поиска с вариантами. Автофокус в поле поиска-->
+        </tr> <!--Конец. Строка 1-->
+
+        <!--Строка 2-->
+        <tr id="tr2">
+            <!--Колонка 1. Форма авторизации-->
+            <td id="tr2td1">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi21" name="fn21">
+                    <input name="formid21" type="hidden" value="activated">
+                    <div>Простая форма авторизации:</div>
+                    <br>
+                    <fieldset id="fsfi21">
+                        <legend>Авторизуйтесь</legend>
+                        <label for="tr2td1Login">
+                            <input id="tr2td1Login" name="tr2td1Login" maxlength="10" required type="Text">
+                            * Логин
+                        </label>
+                        <br>
+                        <label for="tr2td1PsWd">
+                            <input id="tr2td1PsWd" name="tr2td1PsWd" maxlength="10" required type="Text">
+                            * Пароль
+                        </label>
+                        <br>
+                        <label for="tr2td1StayOnline">
+                            <input id="tr2td1StayOnline" type="checkbox">
+                            Оставаться в системе
+                        </label>
+                        <br>
+                        <label for="tr2td1Submit">
+                            <input id="tr2td1Submit" type="submit" value="Войти">
+                        </label>
+                        <br>
+                        <p>
+                            * - обязательное поле
+                        </p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 1. Форма авторизации-->
+            <!--Строка 2-->
+            <!--Колонка 2. Опрос(голосование)-->
+            <td id="tr2td2">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi22" name="fn22">
+                    <input name="formid22" type="hidden" value="activated">
+                    <input name="date_voute" type="hidden" value="2013.12.31">
+                    <div>Опрос(голосование):</div>
+                    <br>
+                    <fieldset id="fsfi22">
+                        <legend>Как вам ?</legend>
+                        <label for="tr2td2HowDoYouLike01">
+                            <input checked id="tr2td2HowDoYouLike01" name="tr2td2HowDoYouLike" type="radio" value="0202_ничего">
+                            ничего
+                        </label>
+                        <br>
+                        <label for="tr2td2HowDoYouLike02">
+                            <input id="tr2td2HowDoYouLike02" name="tr2td2HowDoYouLike" type="radio" value="0202_неплохо">
+                            неплохо
+                        </label>
+                        <br>
+                        <label for="tr2td2HowDoYouLike03">
+                            <input id="tr2td2HowDoYouLike03" name="tr2td2HowDoYouLike" type="radio" value="0202_хорошо">
+                            хорошо
+                        </label>
+                        <br>
+                        <label for="tr2td2HowDoYouLike04">
+                            <input id="tr2td2HowDoYouLike04" name="tr2td2HowDoYouLike" type="radio" value="0202_супер">
+                            супер
+                        </label>
+                        <br>
+                        <label for="tr2td2Submit">
+                            <input id="tr2td2Submit" type="submit" value="Отправить">
+                        </label>
+                        <br>
+                        <p>
+                            Есть скрытое поле<br>
+                            name=date_voute, value="2013.12.31"
+                        </p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 2. Опрос(голосование)-->
+        </tr> <!--Конец. Строка 2-->
+
+        <!--Строка 3-->
+        <tr id="tr3">
+            <!--Колонка 1. Отзыв-->
+            <td id="tr3td1">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi31" method="post" name="fn31">
+                    <input name="formid31" type="hidden" value="activated">
+                    <div>Отзыв:</div>
+                    <br>
+                    <fieldset id="fsfi31">
+                        <legend>Оставьте Ваш отзыв ?</legend>
+                        <label for="tr3td1Name">
+                            <input id="tr3td1Name" name="tr3td1Name" type="text" required>
+                            * Имя
+                        </label>
+                        <label for="tr3td2Name">
+                            <input id="tr3td2Name" name="tr3td2Name" type="email" required>
+                            * e-mail
+                        </label>
+                        <br>
+                        <label>
+                            <textarea lang="ru" id="tr3td1TA" name="tr3td1TA">
+                                Форма отправки
+                            </textarea>
+                        </label>
+                        <br>
+                        <label for="tr3td1Submit">
+                            <input id="tr3td1Submit" type="submit" value="Отправить">
+                        </label>
+                        <br>
+                        <p>
+                            * - обязательное поле<br>
+                            поле email - с проверкой<br>
+                            метод POST
+                        </p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 1. Отзыв-->
+            <!--Строка 3-->
+            <!--Колонка 2. Выпадающий и мульти списки-->
+            <td id="tr3td2">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi32" name="fn32">
+                    <input name="formid32" type="hidden" value="activated">
+                    <div>Выпадающий и мульти списки:</div>
+                    <br>
+                    <fieldset id="fsfi32">
+                        <legend>Города</legend>
+                        <label for="tr3td2RBTowns">
+                            <select id="tr3td2RBTowns" name="tr3td2RBTowns" size="3">
+                                <option value="1">Брест</option>
+                                <option value="2">Минск</option>
+                                <option value="3">Гродно</option>
+                            </select>
+                        </label>
+                        <label for="tr3td2TownsCIS">
+                            <select id="tr3td2TownsCIS" multiple name="tr3td2TownsCIS[]" size="6">
+                                <optgroup label="Города РБ">
+                                    <option value="1">Брест</option>
+                                    <option value="2">Минск</option>
+                                    <option value="3">Гродно</option>
+                                </optgroup>
+                                <optgroup label="Города РФ">
+                                    <option value="4">Москва</option>
+                                    <option value="5">Рязань</option>
+                                    <option value="6">Магадан</option>
+                                </optgroup>
+                            </select>
+                        </label>
+                        <label for="tr3td2Submit">
+                            <input id="tr3td2Submit" type="submit" value="Ок">
+                        </label>
+                        <br>
+                        <p>(выбор одного значения из списка)</p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 2. Выпадающий и мульти списки-->
+        </tr> <!--Конец. Строка 3-->
+
+        <!--Строка 4-->
+        <tr id="tr4">
+            <!--Колонка 1. Загрузка файла на сервер-->
+            <td id="tr4td1">
+                <form action="http://fe.it-academy.by/TestForm.php" enctype="multipart/form-data" id="fi41" method="post" name="fn41">
+                    <input name="formid41" type="hidden" value="activated">
+                    <div>Загрузка файла на сервер</div>
+                    <br>
+                    <fieldset id="fsfi41">
+                        <legend>Upload</legend>
+                        <label for="tr4td1FileName">
+                            Файл:<br>
+                            <input dir="ltr" id="tr4td1FileName" name="tr4td1FileName" type="file" value="Choose File">
+                        </label>
+                        <br>
+                        <label for="tr4td1ShelfLife">
+                            Срок хранения (года):<br>
+                            <input id="tr4td1ShelfLife" name="tr4td1ShelfLife" placeholder="1" type="text">
+                        </label>
+                        <label for="tr1td1Submit">
+                            <input id="tr4td1Submit" type="submit" value="Загрузить">
+                        </label>
+                        <br>
+                        <p>
+                            метод POST<br>
+                            В теге form используйте атрибут enctype="multipart/form-data" для отправки файла на сервер
+                        </p>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 1. Загрузка файла на сервер-->
+            <!--Строка 4-->
+            <!--Колонка 2. Валидация данных HTML5-->
+            <td id="tr4td2">
+                <form action="http://fe.it-academy.by/TestForm.php" id="fi42" name="fn42">
+                    <input name="formid42" type="hidden" value="activated">
+                    <div>Валидация данных HTML5:</div>
+                    <br>
+                    <fieldset id="fsfi42">
+                        <legend>Строка поиска</legend>
+                        <label for="tr4td2Search">
+                            <input id="tr4td2Search" name="tr4td2Search" pattern="^[А-Яа-яЁё\s]+$" placeholder="Только русские буквы" type="text">
+                        </label>
+                        <p>
+                            Телефонный номер в формате +ХХХ-ХХ-ХХХХХХХ, где Х - любая цифра
+                        </p>
+                        <label for="tr4td2Number">
+                            <input id="tr4td2Number" name="tr4td2Number" pattern="\+375-\d{2}-\d{7}" placeholder="+375-29-1234567" required type="text">
+                        </label>
+                        <br>
+                        <label>
+                            <input id="tr4td2Submit" type="submit" value="Проверить">
+                        </label>
+                    </fieldset>
+                    <br>
+                </form>
+            </td> <!--Конец. Колонка 2. Валидация данных HTML5-->
+        </tr> <!--Конец. Строка 4-->
+    </table> <!--Конец. Таблица 4х2 с формами-->
 </body>
 </html>
