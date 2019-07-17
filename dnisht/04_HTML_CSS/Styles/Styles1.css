@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script&display=swap&subset=cyrillic');
+
+h3, article p {
+    font-family: 'Bad Script', cursive;
+    text-align: justify;
+    text-indent: 5mm;
+}
+
+/*Выравнивание текста вправо*/
+header {
+    text-align: right;
+}
