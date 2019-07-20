@@ -1,0 +1,16 @@
+@media all and (max-width: 644px) {
+    .header{
+        background-color: peru;
+        height: 50px;
+    }
+    .banner, .menu{
+        float: none;
+        width: 100%;
+    }
+
+}
+@media all and (min-width: 1000px)  {
+    .footer{
+        background-color: green;
+    }
+}
